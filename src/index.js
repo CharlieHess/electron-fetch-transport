@@ -3,7 +3,7 @@ import FormData from 'form-data'
 
 /**
  * Implements a transport for {@link https://github.com/slackapi/node-slack-sdk}
- * that using `electron-fetch`, which under the surface uses the `net` module.
+ * using `electron-fetch`, which under the surface uses the `net` module.
  *
  * @export
  * @param {Object} args       Request arguments, includes URL, data, & headers

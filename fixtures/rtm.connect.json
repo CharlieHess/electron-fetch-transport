@@ -1,0 +1,13 @@
+{
+    "ok": true,
+    "url": "wss://mpmulti-ktt1.slack-msgs.com/websocket/HpGuyGLW7y9S8J4ftiNLn3nDuvk7dSd0mXmcXAYAI-Z_5xnjiIcrAB05kb50odZa4eru4XrEB7cnPn4s63Sp8dfDobke7frmv0tjDGO9yJXRI2DHAvbh_tK4PqVmaa962HPLDCdwSZwzaeeGUTeNIZ-G6WIIoDYtAN4CQL_dcLE=",
+    "team": {
+        "id": "T02QYTVLG",
+        "name": "SF UTES",
+        "domain": "sfutes"
+    },
+    "self": {
+        "id": "U02QYTVLJ",
+        "name": "hess"
+    }
+}
