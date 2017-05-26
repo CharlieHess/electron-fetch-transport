@@ -27,16 +27,19 @@ describe('the transport', () => {
     expect(callback.mock.calls[0][3]).toEqual(mockPayload);
   });
 
-  it('should use the parameters in the fetch call', async () => {
+  it('should use the parameters in the fetch call, and stringify non-strings', async () => {
     const url = 'https://slack.com/api/rtm.connect';
-    const data = { token: 'abc123' };
+    const data = {
+      token: 'abc123',
+      presence_sub: true
+    };
     const headers = { 'User-Agent': 'testing' }
 
     await transport({ url, data, headers }, jest.fn());
 
     expect(mockFetch).toHaveBeenCalledWith(url, jasmine.objectContaining({
       method: 'POST',
-      body: data,
+      body: { token: 'abc123', presence_sub: 'true' },
       headers
     }));
   });

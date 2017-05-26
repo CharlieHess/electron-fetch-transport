@@ -27,7 +27,7 @@ export default async function transport(args, callback) {
 
 function formDataFromArgs(data) {
   return Object.keys(data).reduce((form, key) => {
-    form.append(key, data[key]);
+    form.append(key, data[key].toString());
     return form;
   }, new FormData())
 }
