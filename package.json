@@ -1,6 +1,6 @@
 {
   "name": "electron-fetch-transport",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A transport for using the node-slack-sdk with Electron",
   "main": "./dist/index.js",
   "jest": {
