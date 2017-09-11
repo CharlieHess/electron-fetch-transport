@@ -2,18 +2,22 @@ import rtmConnect from '../fixtures/rtm.connect.json';
 import transport from '../src';
 
 const mockPayload = JSON.stringify(rtmConnect);
-const mockFetch = require('jest-fetch-mock');
-
-jest.mock('electron-fetch', () => require('jest-fetch-mock'));
-jest.mock('form-data', () => require('../mock-form-data'));
 
 describe('the transport', () => {
+  let mockFetch;
+
+  beforeEach(() => {
+    jest.mock('form-data');
+    jest.mock('electron-fetch');
+    mockFetch = require('electron-fetch');
+    mockFetch.mockResponse(mockPayload);
+  });
+
   afterEach(() => {
-    mockFetch.resetMocks()
+    jest.resetAllMocks();
   });
 
   it('should invoke the callback with the response', async () => {
-    mockFetch.mockResponse(mockPayload)
     const callback = jest.fn();
 
     await transport({

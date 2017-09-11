@@ -14,7 +14,7 @@ export default async function transport(args, callback) {
   try {
     const response = await fetch(args.url, {
       method: 'POST',
-      body: formDataFromArgs(args.data),
+      body: formDataFromArgs(args.data || {}),
       headers: args.headers
     });
 
@@ -29,5 +29,5 @@ function formDataFromArgs(data) {
   return Object.keys(data).reduce((form, key) => {
     form.append(key, data[key].toString());
     return form;
-  }, new FormData())
+  }, new FormData());
 }
